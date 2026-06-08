@@ -36,10 +36,30 @@ public class MochilaFraccional {
             }
         }
 
-    
-       
+        // 3. Selección voraz
+        double valorTotal = 0;
+        double capacidadRestante = capacidad;
 
-    
+        System.out.println("Objetos seleccionados:");
+
+        for (int i = 0; i < n; i++) {
+            if (capacidadRestante == 0) break;
+
+            if (pesos[i] <= capacidadRestante) {
+                // El objeto entra completo
+                capacidadRestante -= pesos[i];
+                valorTotal += valores[i];
+                System.out.println("- " + nombres[i] + " completo");
+            } else {
+                // Se toma una fracción del objeto
+                double fraccion = capacidadRestante / pesos[i];
+                valorTotal += valores[i] * fraccion;
+                System.out.println("- " + (int)capacidadRestante + "/" + (int)pesos[i] + " Parte del objeto " + nombres[i]);
+                capacidadRestante = 0; // Mochila llena
+            }
+        }
+
+        System.out.println("Valor total aproximado: " + (int)valorTotal);
     }
 
     public static void main(String[] args) {
