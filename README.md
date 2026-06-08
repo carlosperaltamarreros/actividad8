@@ -8,12 +8,14 @@ El presente documento consolida la base teórica, la explicación detallada de l
 ---
 # Compilación 
 
-javac MochilaFraccional.java
+javac MochilaFraccional.java.
+
 javac CoberturaAntenas.java
 
 # Ejecución 
 
-java MochilaFraccional
+java MochilaFraccional.
+
 java CoberturaAntenas
 
 
