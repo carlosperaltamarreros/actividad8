@@ -9,6 +9,36 @@ public class MochilaFraccional {
             ratios[i] = valores[i] / pesos[i];
         }
 
+        // 2. Ordenar por método Burbuja (de mayor a menor ratio)
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (ratios[j] < ratios[j + 1]) {
+                    // Intercambiar ratios
+                    double tempRatio = ratios[j];
+                    ratios[j] = ratios[j + 1];
+                    ratios[j + 1] = tempRatio;
+
+                    // Intercambiar pesos
+                    double tempPeso = pesos[j];
+                    pesos[j] = pesos[j + 1];
+                    pesos[j + 1] = tempPeso;
+
+                    // Intercambiar valores
+                    double tempValor = valores[j];
+                    valores[j] = valores[j + 1];
+                    valores[j + 1] = tempValor;
+
+                    // Intercambiar nombres
+                    String tempNombre = nombres[j];
+                    nombres[j] = nombres[j + 1];
+                    nombres[j + 1] = tempNombre;
+                }
+            }
+        }
+
+    
+       
+
     
     }
 
